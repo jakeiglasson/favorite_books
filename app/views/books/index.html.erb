@@ -1,3 +1,4 @@
+
 <%# this is the starting landing page. When the site loads, it should load this first %>
 <%# Though having users sign in before they can access the site feels like an over 18 site - DF %>
 
@@ -13,3 +14,38 @@
 
 <%# this is for signing out of the session %>
 <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+
+<h1>BOOKS</h1>
+
+<%= link_to "new book", new_book_path %>
+
+<% @books.each do |i|  %>
+
+  <ul>
+
+    <li>
+      TITLE: <%= i.title %>
+    </li>
+
+    <li>
+      AUTHOR: <%= i.author %>
+    </li>
+
+    <li>
+      DESCRIPTION: <%= i.description %>
+    </li>
+
+    <% if i.cover_picture.attached? %>
+      <li>
+        <%= image_tag i.cover_picture  %>
+      </li>
+    <% end %>
+
+    <li>
+      <%= link_to "edit", edit_book_path(i) %>
+    </li>
+
+  </ul>
+
+<% end %>
+

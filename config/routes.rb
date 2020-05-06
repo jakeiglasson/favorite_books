@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  root to: 'books#index'
+  root to: "pages#index"
+
   resources :users
   resources :books
+  # resources :pages
 end
