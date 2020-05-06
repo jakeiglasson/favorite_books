@@ -15,8 +15,8 @@ Book.delete_all
         title: Faker::Book.title,
         author: Faker::Book.author,
         description: "something about the book",
-        cover_picture: "picture to go here"
-
     )
+    file = open("https://picsum.photos/200/300")
+    b.cover_picture.attach(io: file, filename: "temp.#{file.content_type_parse.first.split("/").last}", content_type: file.content_type_parse.first)
     puts "#{b.title} created!"
 end
