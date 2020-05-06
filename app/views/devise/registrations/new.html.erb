@@ -3,17 +3,17 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-<%# want to try to add more info to the form %>
- <div class="field">
+<%# This adds the feature that the new user must sign up with their name and username %>
+<div class="field">
     <%= f.label :name %><br />
-    <%= f.name_field :name, autofocus: true, autocomplete: "name" %>
+    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
   </div>
 
- <div class="field">
+<div class="field">
     <%= f.label :username %><br />
-    <%= f.username_field :username, autofocus: true, autocomplete: "user-name" %>
+    <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
   </div>
-  <%# below is the original - tried to add the two fields needed %>
+<%# //////////////////////////////////////////////////////////////////////////////////// %>
 
   <div class="field">
     <%= f.label :email %><br />
