@@ -10,7 +10,7 @@ puts "Removing old book entries"
 Book.delete_all
 
 
-20.times do
+3.times do
     b = Book.create(
         title: Faker::Book.title,
         author: Faker::Book.author,

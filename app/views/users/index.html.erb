@@ -1,1 +1,33 @@
-<h1>test</h1>
+<h1>USERS</h1>
+
+<%= link_to "new user", new_user_path %>
+
+<% @users.each do |i|  %>
+
+  <ul>
+
+    <li>
+      TITLE: <%= i.name %>
+    </li>
+
+    <li>
+      AUTHOR: <%= i.username %>
+    </li>
+
+    <li>
+      DESCRIPTION: <%= i.password %>
+    </li>
+
+    <% if i.profile_picture.attached? %>
+      <li>
+        <%= image_tag i.profile_picture  %>
+      </li>
+    <% end %>
+
+    <li>
+      <%= link_to "edit", edit_user_path(i) %>
+    </li>
+
+  </ul>
+
+<% end %>
