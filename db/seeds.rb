@@ -20,3 +20,13 @@ Book.delete_all
     b.cover_picture.attach(io: file, filename: "temp.#{file.content_type_parse.first.split("/").last}", content_type: file.content_type_parse.first)
     puts "#{b.title} created!"
 end
+
+
+# 12.times do
+#     n = User.create(
+#         name: Faker::FunnyName.two_word_name,
+#         username: Faker::JapaneseMedia::DragonBall.character,
+#         password: '123456',
+#         email: Faker::Internet.email
+#     )
+# end

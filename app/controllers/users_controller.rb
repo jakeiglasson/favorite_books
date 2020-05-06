@@ -58,3 +58,7 @@ class UsersController < ApplicationController
   end
 
 end
+
+
+# Note for me - this is used to authenticate whether a user has signed in or not. It'll go into which ever pages we need it to go into. It's for me to remember to include it once the CRUD is done. - DF
+# authenticate_user!
