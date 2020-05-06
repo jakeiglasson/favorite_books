@@ -1,0 +1,32 @@
+<%= form_with model:@user, local: true do |form| %>
+  <ul>
+  
+    <li>
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </li>
+
+    <li>
+      <%= form.label :username %>
+      <%= form.text_field :username %>
+    </li>
+
+    <li>
+      <%= form.label :password %>
+      <%= form.text_field :password %>
+    </li>
+
+    <li>
+      <div>
+        <%= form.label :profile_picture %> 
+        <%= form.file_field :profile_picture, accept: 'image/png,image/gif,image/jpeg,image/jpg' %>
+      </div>
+    </li>
+
+    <li>
+      <%= form.submit %>
+    </li>
+
+  </ul>
+
+<% end %>

@@ -12,14 +12,14 @@ Book.delete_all
 user_one = User.create(email: 'test1@book.com', password: 'password')
 user_two = User.create(email: 'test2@book.com', password: 'password')
 
-20.times do
+3.times do
     b = Book.create(
         title: Faker::Book.title,
         author: Faker::Book.author,
         description: "something about the book",
-        cover_picture: "picture to go here"
-
     )
+    file = open("https://picsum.photos/200/300")
+    b.cover_picture.attach(io: file, filename: "temp.#{file.content_type_parse.first.split("/").last}", content_type: file.content_type_parse.first)
     puts "#{b.title} created!"
 end
 
