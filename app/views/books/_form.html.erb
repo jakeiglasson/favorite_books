@@ -1,0 +1,32 @@
+<%= form_with model:@book, local: true do |form| %>
+  <ul>
+  
+    <li>
+      <%= form.label :title %>
+      <%= form.text_field :title %>
+    </li>
+
+    <li>
+      <%= form.label :author %>
+      <%= form.text_field :author %>
+    </li>
+
+    <li>
+      <%= form.label :description %>
+      <%= form.text_field :description %>
+    </li>
+
+    <li>
+      <div>
+        <%= form.label :cover_picture %> 
+        <%= form.file_field :cover_picture, accept: 'image/png,image/gif,image/jpeg,image/jpg' %>
+      </div>
+    </li>
+
+    <li>
+      <%= form.submit %>
+    </li>
+
+  </ul>
+
+<% end %>

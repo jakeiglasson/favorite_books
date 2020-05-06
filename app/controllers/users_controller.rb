@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-
-  before_action :find_user, only:{:show, :edit, :update, :destroy}
+  before_action :find_user, only:[:show, :edit, :update, :destroy]
 
   def index
     @users = User.all
@@ -17,9 +16,10 @@ class UsersController < ApplicationController
   def create
     if User.create(user_params)
       #success
-      render user_path[:id]
+      redirect_to users_path
     else
       render :new
+    end
   end
 
   def edit
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
   def update
     if @user.update(user_params)
       #success
-      render user_path[:id]
+      redirect_to users_path
     else
       #fail
       render :edit
@@ -38,8 +38,13 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user.destroy
-    render :index
+    if @user.destroy
+      #success
+      redirect_to users_path
+    else
+      #fail
+      render :edit
+    end
   end
 
   private
@@ -49,6 +54,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :username, :password)
+    params.require(:user).permit(:name, :username, :password, :profile_picture)
   end
+
 end
