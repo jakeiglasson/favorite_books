@@ -3,6 +3,18 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
+<%# want to try to add more info to the form %>
+ <div class="field">
+    <%= f.label :name %><br />
+    <%= f.name_field :name, autofocus: true, autocomplete: "name" %>
+  </div>
+
+ <div class="field">
+    <%= f.label :username %><br />
+    <%= f.username_field :username, autofocus: true, autocomplete: "user-name" %>
+  </div>
+  <%# below is the original - tried to add the two fields needed %>
+
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
