@@ -9,6 +9,8 @@
 puts "Removing old book entries"
 Book.delete_all
 
+user_one = User.create(email: 'test1@book.com', password: 'password')
+user_two = User.create(email: 'test2@book.com', password: 'password')
 
 20.times do
     b = Book.create(
@@ -20,3 +22,13 @@ Book.delete_all
     )
     puts "#{b.title} created!"
 end
+
+
+# 12.times do
+#     n = User.create(
+#         name: Faker::FunnyName.two_word_name,
+#         username: Faker::JapaneseMedia::DragonBall.character,
+#         password: '123456',
+#         email: Faker::Internet.email
+#     )
+# end
