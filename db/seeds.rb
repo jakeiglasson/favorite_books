@@ -9,13 +9,14 @@
 puts "Removing old book entries"
 Book.delete_all
 
+
 20.times do
     b = Book.create(
         title: Faker::Book.title,
         author: Faker::Book.author,
         description: "something about the book",
         cover_picture: "picture to go here"
-        
+
     )
     puts "#{b.title} created!"
 end
