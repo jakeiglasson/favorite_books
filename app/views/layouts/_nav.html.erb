@@ -6,9 +6,9 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup">
-    <div class="navbar-nav" >
+    <div class="navbar-nav">
       <% if user_signed_in? %>
-        <%= link_to "Hello! #{current_user.username}", class: 'nav-item nav-link active' %>
+        <%= link_to "Hello! #{current_user.username}", root_path,class: 'nav-item nav-link active' %>
       <% end %> 
     </div>
     <div class="navbar-nav">

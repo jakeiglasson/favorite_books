@@ -1,6 +1,43 @@
 // @import 'styles/books.scss';
 @import 'layouts/flash.scss';
-
+@import url('//fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"');
 .middle{
   text-align: center;
+}
+
+.font{
+  font-family: 'Open Sans', sans-serif;
+}
+
+.right{
+  padding-right: 10px;
+}
+
+.top{
+  padding-top: 50px;
+}
+
+.top-sm{
+  padding-top: 20px;
+}
+
+.inner
+{
+  display: inline-block;
+}
+
+.border-registration{
+  width:400px; 
+  border-radius:2%; 
+  padding:30px; 
+  margin-top:30px;
+}
+
+.box{
+  width:200px;
+  height:200px;
+  position:absolute;
+  left:50%;
+  top:50%;
+  margin: -100px 0 0 -100px;
 }

@@ -16,9 +16,9 @@
 
 <%= link_to "Sign out", destroy_user_session_path, method: :delete %> -->
 
-<div class="middle">
+<div class="middle font">
   <h1>FAVOURITE BOOKS LIST</h1>
-  <%= link_to "New Book", new_book_path %>
+  <%= link_to "Add Book", new_book_path %>
 </div>
 <div class="row justify-content-around">
   <% @books.each do |book|  %>
