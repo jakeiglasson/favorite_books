@@ -8,4 +8,14 @@ class User < ApplicationRecord
     has_many :books, through: :user_favorite_books
     has_one_attached :profile_picture
 
+    # def admin?
+    #   if self.email.ends_with('@book.com')
+    #     #Admin@book.com
+    #     if self.email.split('@').first == 'admin'
+    #       return true
+    #     end
+    #   end
+    #   false
+    # end
+
 end

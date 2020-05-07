@@ -3,13 +3,22 @@
 
 <%# /main is just a place holder for now. Should be whatever the main index or book section is %>
 
-<%= link_to "Come Take A Seat inside the Book Club", "/main" %>
+<%= link_to "Come Take A Seat inside the Book Club     |", "/books" %>
+
+
+<%= link_to "Sign in     |", new_user_session_path %>
 
 <%# this is for signing out of the session %>
+<% if user_signed_in? %>
 <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+<% end %>
 
 <br>
 <br>
-<%= link_to "book index", books_path %>
+<%= link_to "Show Books", books_path %>
 <br>
+
+<p>THIS MUST BE HIDDEN ONLY FOR ADMIN</p>
+<% if user_signed_in? %>
 <%= link_to "user index", users_path %>
+<% end %>
