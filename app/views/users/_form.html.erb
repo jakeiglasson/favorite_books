@@ -1,32 +1,22 @@
-<%= form_with model:@user, local: true, class: 'border' do |form| %>
-  <ul>
-  
-    <li>
-      <%= form.label :name %>
-      <%= form.text_field :name %>
-    </li>
+<%= form_with model:@user, local: true do |form| %>
 
-    <li>
-      <%= form.label :username %>
-      <%= form.text_field :username %>
-    </li>
+  <div class="form-group top">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: 'form-control' %>
+  </div>
 
-    <li>
-      <%= form.label :password %>
-      <%= form.text_field :password %>
-    </li>
+  <div class="form-group">
+    <%= form.label :username %>
+    <%= form.text_field :username, class: 'form-control' %>
+  </div>
 
-    <li>
-      <div>
-        <%= form.label :profile_picture %> 
-        <%= form.file_field :profile_picture, accept: 'image/png,image/gif,image/jpeg,image/jpg' %>
-      </div>
-    </li>
+  <div class="form-group">
+    <%= form.label :password %>
+    <%= form.text_field :password, class: 'form-control' %>
+  </div>
 
-    <li>
-      <%= form.submit %>
-    </li>
-
-  </ul>
+  <div class="top-sm">
+    <%= form.submit class: 'btn btn-info my-2' %>
+  </div>
 
 <% end %>

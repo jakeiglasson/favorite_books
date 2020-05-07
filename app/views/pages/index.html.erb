@@ -1,22 +1,30 @@
+<div class="middle">
 <h1>The Book Club</h1>
 <p>A library for your favorite books</p>
 
 <%# /main is just a place holder for now. Should be whatever the main index or book section is %>
 
-<%= link_to "View Books    |", books_path %>
+<%= link_to "View Books", books_path %>
 
 <%# Should not be seen as a user would already be logged in %>
-<%# <%= link_to "Sign in     |", new_user_session_path %>
+<%# <%= link_to "Sign in    |", new_user_session_path %>
 
 <%# this is for signing out of the session %>
 <% if user_signed_in? %>
-<%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+<%= link_to "|    Sign out", destroy_user_session_path, method: :delete %>
 <% end %>
 
 <% if current_user.try(:admin?) %>
-<br><br><br>
-<p>THIS SHOULD BE HIDDEN - ONLY THE ADMIN SHOULD BE ABLE TO SEE THIS</p>
+
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Warning!</strong> THE FUNCTIONS BELOW ONLY FOR ADMIN TO USE.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
 <%= link_to "Show Books", books_path %>
 <br>
 <%= link_to "Click to see the Users", users_path %>
 <% end %>
+</div>
