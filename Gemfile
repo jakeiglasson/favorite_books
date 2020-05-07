@@ -58,3 +58,5 @@ gem "faker", "~> 2.11"
 gem "devise", "~> 4.7"
 
 gem "aws-sdk-s3", "~> 1.63"
+
+gem 'rails_admin'

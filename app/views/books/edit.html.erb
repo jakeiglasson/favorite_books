@@ -1,7 +1,9 @@
 <%= render "form" %>
 
 <br>
+<% if current_user.try(:admin?) %>
 <%= link_to 'Destroy', book_path, :confirm => 'Are you sure?', :method => :delete %>
+<% end %>
 <br>
 <br>
 <%= link_to 'back', books_path %>
