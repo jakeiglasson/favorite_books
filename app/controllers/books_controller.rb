@@ -1,11 +1,8 @@
 class BooksController < ApplicationController
 
-# this means that a user will need to sign in before they can do anything
-before_action :authenticate_user!, except: [:index, :show]
-before_action :find_book, only:[:show, :edit, :update, :destroy]
+  before_action :find_book, only:[:show, :edit, :update, :destroy]
 
   def index
-    authenticate_user!
     @books = Book.all
   end
 

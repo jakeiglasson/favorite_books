@@ -6,19 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
-
-# Create users
-puts "Creating new test subjects"
-user_one = User.create(name: 'test', username: 'test1', email: 'test1@book.com', password: 'password', admin: false)
-user_two = User.create(name: 'test', username: 'test2', email: 'test2@book.com', password: 'password', admin: false)
-
-# Create admin
-puts "Creating super human admin!"
-user_admin = User.create(name: 'Admin', username: 'Admin', email: 'admin@book.com', password: 'password', admin: true)
-
 puts "Removing old book entries"
 Book.delete_all
+
+user_one = User.create(email: 'test1@book.com', password: 'password')
+user_two = User.create(email: 'test2@book.com', password: 'password')
 
 3.times do
     b = Book.create(
