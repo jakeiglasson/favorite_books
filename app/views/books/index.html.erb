@@ -17,11 +17,34 @@
 <%= link_to "Sign out", destroy_user_session_path, method: :delete %> -->
 
 <div class="middle font">
-  <h1>FAVOURITE BOOKS LIST</h1>
-  <%= link_to "Add Book", new_book_path %>
+  <h1>BOOKS LIST</h1>
 </div>
+
+<% if current_user.try(:admin?) %>
+
+  <div class="middle font">
+    <%= link_to "Add Book", new_book_path %>
+  </div>
+
+<% else %>
+
+  <%= form_with url: user_favorite_books_path, model:@user_favorite_book, local: true do |form| %>
+    <div class="form-group top">
+      <%= form.label :books %>
+      <%= form.collection_select(:book_id, Book.all, :id, :title) %>
+    </div>
+
+    <div class="top-sm">
+      <%= form.submit "Add to Favorites", class: 'btn btn-info my-2'%>
+    </div>
+  <% end %>
+
+<% end %>
+
 <div class="row justify-content-around">
   <% @books.each do |book|  %>
     <%= render 'card', book: book %>
   <% end %>
 </div>
+
+
