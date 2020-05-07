@@ -10,12 +10,14 @@
       <% if user_signed_in? %>
         <%= link_to 'Add Book', root_path, class: 'nav-item nav-link active' %>
       <% end %> 
+    
     </div>
     <div class="navbar-nav">
       <% unless user_signed_in? %>
         <%= link_to 'Register', new_user_registration_path, class: 'btn btn-outline-primary ml-1' %>
         <%= link_to 'Login', new_user_session_path, class: 'btn btn-outline-primary ml-1' %>
       <% else %>
+        <p>Welcome <%= current_user.username %></p>
         <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn btn-outline-danger ml-1' %>
       <% end %>
     </div>

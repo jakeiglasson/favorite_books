@@ -1,12 +1,19 @@
 <h1>The Book Club</h1>
 <p>A library for your favorite books</p>
 
-<%# /main is just a place holder for now. Should be whatever the main index or book section is %>
+<%# Links to books page if the user has already signed in %>
 
-<%= link_to "Come Take A Seat inside the Book Club", "/main" %>
+<%= link_to "Come Take A Seat inside the Book Club     |", "/books" %>
+
+<%# according to the routes the prefix is new_user_session %>
+<%# this also allows you to create a new user %>
+<%= link_to "Sign in     |", new_user_session_path %>
 
 <%# this is for signing out of the session %>
 <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+
+
+
 
 <br>
 <br>

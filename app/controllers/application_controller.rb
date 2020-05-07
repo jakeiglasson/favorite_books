@@ -1,4 +1,8 @@
 class ApplicationController < ActionController::Base
+    rescue_from CanCan::AccessDenied do |exception|
+            flash[:error] = "Not allowed to do that so piss off"
+            redirect_to book_path
+    end
 
 before_action :configure_permitted_parameters, if: :devise_controller?
 

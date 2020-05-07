@@ -1,8 +1,11 @@
 class BooksController < ApplicationController
-
+  # this means that a user will need to sign in before they can do anything
+  before_action :authenticate_user!
+  load_and_authorize_resource
   before_action :find_book, only:[:show, :edit, :update, :destroy]
 
   def index
+    authenticate_user!
     @books = Book.all
   end
 
@@ -59,3 +62,7 @@ class BooksController < ApplicationController
   end
   
 end
+
+
+# Note for me - this is used to authenticate whether a user has signed in or not. It'll go into which ever pages we need it to go into. It's for me to remember to include it once the CRUD is done. - DF
+# authenticate_user!
