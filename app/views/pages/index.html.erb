@@ -1,30 +1,46 @@
 <div class="middle">
-<h1>The Book Club</h1>
-<p>A library for your favorite books</p>
+  <h1>The Book Club</h1>
+  <p>A library for your favorite books</p>
 
-<%# /main is just a place holder for now. Should be whatever the main index or book section is %>
+  <%# /main is just a place holder for now. Should be whatever the main index or book section is %>
 
-<%= link_to "View Books", books_path %>
+  <%= link_to "View Books", books_path %>
 
-<%# Should not be seen as a user would already be logged in %>
-<%# <%= link_to "Sign in    |", new_user_session_path %>
+  <%# Should not be seen as a user would already be logged in %>
+  <%# <%= link_to "Sign in    |", new_user_session_path %>
 
-<%# this is for signing out of the session %>
-<% if user_signed_in? %>
-<%= link_to "|    Sign out", destroy_user_session_path, method: :delete %>
-<% end %>
+  <%# this is for signing out of the session %>
+  <% if user_signed_in? %>
+    <%= link_to "|    Sign out", destroy_user_session_path, method: :delete %>
+  <% end %>
 
-<% if current_user.try(:admin?) %>
+  <% if current_user.try(:admin?) %>
 
-<div class="alert alert-warning alert-dismissible fade show" role="alert">
-  <strong>Warning!</strong> THE FUNCTIONS BELOW ONLY FOR ADMIN TO USE.
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>Warning!</strong> THE FUNCTIONS BELOW ONLY FOR ADMIN TO USE.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
 
-<%= link_to "Show Books", books_path %>
-<br>
-<%= link_to "Click to see the Users", users_path %>
-<% end %>
+    <%= link_to "Show Books", books_path %>
+    <br>
+    <%= link_to "Click to see the Users", users_path %>
+
+  <% else %>
+
+    <div class="middle font">
+      <h1>FAVOURITE BOOKS LIST</h1>
+    </div>
+    <div class="row justify-content-around">
+      <% @arr.each do |book|  %>
+        <%= render './books/card', book: book %>
+      <% end %>
+    </div>
+
+
+
+
+  <% end %>
+
 </div>

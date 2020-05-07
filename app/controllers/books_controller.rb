@@ -7,6 +7,11 @@ before_action :find_book, only:[:show, :edit, :update, :destroy]
   def index
     authenticate_user!
     @books = Book.all
+    UserFavoriteBooksController.new
+  end
+
+  def all
+    @books = Book.all
   end
 
   def show
