@@ -15,7 +15,7 @@
 
 <% if current_user.try(:admin?) %>
 <br><br><br>
-<p>THIS SHOULD BE HIDDEN AND ONLY VIEWABLE FOR THE ADMIN</p>
+<p>THIS SHOULD BE HIDDEN - ONLY THE ADMIN SHOULD BE ABLE TO SEE THIS</p>
 <%= link_to "Show Books", books_path %>
 <br>
 <%= link_to "Click to see the Users", users_path %>
