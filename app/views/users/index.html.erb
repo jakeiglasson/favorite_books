@@ -1,6 +1,9 @@
 <h1>USERS</h1>
 
-<%= link_to "new user", new_user_path %>
+<h2>Hello Mr Admin, what would you like to do now?<h2>
+<h3>This area is for setting up or removing users who are not true book fans!<h3>
+
+<%= link_to "Create a new user", new_user_path %>
 
 <% @users.each do |i|  %>
 
@@ -25,7 +28,7 @@
     <% end %>
 
     <li>
-      <%= link_to "edit", edit_user_path(i) %>
+      <%= link_to "Edit", edit_user_path(i) %>
     </li>
 
   </ul>
