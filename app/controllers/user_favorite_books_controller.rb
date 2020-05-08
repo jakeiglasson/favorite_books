@@ -18,8 +18,12 @@ class UserFavoriteBooksController < ApplicationController
     )
     # render json: { status: :true }
     redirect_to root_path
-    # redirect_to books_path
-    # redirect_to user_favorite_books_path
+  end
+
+  def destroy
+    @user = User.find(current_user.id)
+    @user.books.delete(params[:id])
+    redirect_to root_path
   end
 
 end
