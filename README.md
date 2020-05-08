@@ -1,24 +1,15 @@
-# README
+<div style="text-align: justify; font-size: 1.5em">
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# THE BOOK CLUB
 
-Things you may want to cover:
+The book club is a fantastic book application that brings wonder and awe to the book reading communtiy.
 
-* Ruby version
+Breathe life into the pages of many amazing and sparling books at they take you on a journey through foreign lands and enchanting worlds
 
-* System dependencies
+This site may appear simple, but the design is what speaks the most. An elegant design that we believe our readers will stay for a long time
 
-* Configuration
+The book club is a database collection where our lovely communtiy can add books to their favorite list
 
-* Database creation
+So join us at **The Book Club**
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+_J.J.D_
