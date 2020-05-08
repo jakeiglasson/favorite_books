@@ -26,6 +26,8 @@
     <%= link_to "Show Books", books_path %>
     <br>
     <%= link_to "Click to see the Users", users_path %>
+    <br>
+    <%= link_to "ADMIN CONTROL PANNEL", "/admin" %>
 
   <% else %>
 
@@ -33,8 +35,10 @@
       <h1>FAVOURITE BOOKS LIST</h1>
     </div>
     <div class="row justify-content-around">
-      <% @arr.each do |book|  %>
-        <%= render './books/card', book: book %>
+      <% if @arr != nil%>
+        <% @arr.each do |book|  %>
+          <%= render './books/card', book: book %>
+        <% end %>
       <% end %>
     </div>
 

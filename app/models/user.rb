@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
     has_many :user_favorite_books
-    has_many :books, through: :user_favorite_books
+    has_many :books, through: :user_favorite_books, dependent: :destroy
     has_one_attached :profile_picture
 
     # def admin?

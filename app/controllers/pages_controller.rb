@@ -2,7 +2,7 @@ class PagesController < ApplicationController
 
   def index
 
-    if user_signed_in?
+    if user_signed_in? == true
       # @user_id = current_user.id
       # @books = Book.all
       puts "start --------------------------"
