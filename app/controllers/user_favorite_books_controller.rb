@@ -17,7 +17,9 @@ class UserFavoriteBooksController < ApplicationController
       user_id: current_user.id
     )
     # render json: { status: :true }
-    redirect_to pages_path
+     redirect_to pages_path
+    # redirect_to books_path
+    # redirect_to user_favorite_books_path
   end
 
 end
