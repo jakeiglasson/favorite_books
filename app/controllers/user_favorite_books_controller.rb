@@ -20,4 +20,10 @@ class UserFavoriteBooksController < ApplicationController
     redirect_to root_path
   end
 
+  def destroy
+    @user = User.find(current_user.id)
+    @user.books.delete(params[:id])
+    redirect_to root_path
+  end
+
 end
