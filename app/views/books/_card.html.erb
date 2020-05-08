@@ -10,11 +10,9 @@
 
     <%# if user is signed in it should show the add and remove button %>
       <% if user_signed_in? %>
-        <%= link_to 'Add', user_favorite_books_path(book, user), method: :post, class: 'btn btn-primary' %>
-
-        <%= link_to 'Remove', edit_book_path(book), class: 'btn btn-primary' %>
+        <%= link_to 'Add', user_favorite_books_path(book), data: {confirm: 'Are you sure?'}, method: :create, class: 'btn btn-primary' %>
+        <%# <%= link_to 'Remove', user_favorite_book_path(book), data: {confirm: 'Are you sure?'}, method: :delete, class:"btn btn-danger"%> %>
       <% end %>
-
 
     <% if current_user.try(:admin?) %>
       <%= link_to 'Edit', edit_book_path(book), class: 'btn btn-primary' %>
