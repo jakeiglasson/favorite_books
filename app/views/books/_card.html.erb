@@ -9,5 +9,9 @@
     <% if current_user.try(:admin?) %>
       <%= link_to 'Edit', edit_book_path(book), class: 'btn btn-primary' %>
     <% end %>
+    <% if current_page?(root_path)%>
+      <%= link_to 'Remove', user_favorite_book_path(book), data: {confirm: 'Are you sure?'}, method: :delete, class:"btn btn-danger"%>
+    <% end %>
+
   </div>
 </div>
