@@ -28,7 +28,7 @@
 
 <% else %>
 
-  <%= form_with url: user_favorite_books_path, model:@user_favorite_book, local: true do |form| %>
+  <!-- <%= form_with url: user_favorite_books_path, model:@user_favorite_book, local: true do |form| %>
     <div class="form-group top">
       <%= form.label :books %>
       <%= form.collection_select(:book_id, Book.all, :id, :title) %>
@@ -37,7 +37,7 @@
     <div class="top-sm">
       <%= form.submit "Add to Favorites", class: 'btn btn-info my-2'%>
     </div>
-  <% end %>
+  <% end %> -->
 
 <% end %>
 

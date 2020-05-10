@@ -6,9 +6,20 @@
     <h5 class="card-title"><%= book.title %></h5>
     <h6 class="card-text"><%= book.author %></h6>
     <p class="card-text"><%= book.description %></p>
+
+    <%# if user is signed in it should show the add and remove button %>
+    <% if current_page?(books_path)%>
+      <% if user_signed_in? %>
+
+        <%= link_to 'add', user_favorite_books_create_path(book_id: book.id, user_id: current_user.id), method: :post%>
+
+      <% end %>
+    <% end %>
+
     <% if current_user.try(:admin?) %>
       <%= link_to 'Edit', edit_book_path(book), class: 'btn btn-primary' %>
     <% end %>
+
     <% if current_page?(root_path)%>
       <%= link_to 'Remove', user_favorite_book_path(book), data: {confirm: 'Are you sure?'}, method: :delete, class:"btn btn-danger"%>
     <% end %>

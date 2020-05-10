@@ -14,7 +14,7 @@ class UserFavoriteBooksController < ApplicationController
     p "\n"
     UserFavoriteBook.create(
       book_id: params[:book_id],
-      user_id: current_user.id
+      user_id: params[:user_id]
     )
     # render json: { status: :true }
     redirect_to root_path
