@@ -6,6 +6,10 @@ Rails.application.routes.draw do
 
   resources :users
   resources :books
+  
+  post "/user_favorite_books", to: "user_favorite_books#create", as: "user_favorite_books_create"
   resources :user_favorite_books
+
+  
   # resources :pages
 end
